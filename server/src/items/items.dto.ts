@@ -20,7 +20,7 @@ export const ItemsSchema = new mongoose.Schema({
         type: String
     }],
     category:String
-});
+}, {timestamps: true});
 
 
 export interface ItemsI{
