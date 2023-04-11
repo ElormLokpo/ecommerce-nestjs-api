@@ -2,11 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import {Model} from 'mongoose';
 import { UsersI } from './users.dto';
+
 const bcrypt = require('bcrypt');
 
 @Injectable()
 export class UsersService{
-    constructor(@InjectModel('UsersModel') private readonly usersmodel:Model<UsersI>){}
+    constructor(
+        @InjectModel('UsersModel') private readonly usersmodel:Model<UsersI>,
+        ){}
 
 
     async registerUser(fullname:string,username:string, password:string){
@@ -24,5 +27,6 @@ export class UsersService{
         return null;
     }
 
+  
    
 }
