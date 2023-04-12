@@ -13,8 +13,8 @@ export class UsersService{
 
 
     async registerUser(fullname:string,username:string, password:string){
-        const userData = await this.usersmodel.create({fullname, username, password});
-        return {_id:userData._id, username: userData.username, fullname: userData.fullname};
+        const userData = await this.usersmodel.create({fullname, username, password, cart:[]});
+        return {_id:userData._id, username: userData.username, fullname: userData.fullname, cart:[]};
     }
 
     async validateUser(username:string, password:string){

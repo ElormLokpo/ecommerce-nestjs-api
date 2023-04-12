@@ -8,7 +8,6 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(''),
     AuthModule,
     ItemsModule,
     UsersModule

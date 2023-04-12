@@ -19,7 +19,15 @@ export const ItemsSchema = new mongoose.Schema({
     sizes:[{
         type: String
     }],
-    category:String
+    category:String,
+    img:{
+        type:String,
+        default: 'https://placehold.co/600x400'
+    },
+    quantity:{
+        type:Number,
+        default:0
+    }
 }, {timestamps: true});
 
 
@@ -30,5 +38,7 @@ export interface ItemsI{
     brand?: string,
     outOfStock?: boolean,
     sizes: string[],
-    category: string
+    category: string,
+    img: string,
+    quantity: number
 }

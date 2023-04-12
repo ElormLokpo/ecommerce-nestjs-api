@@ -5,8 +5,10 @@ import {
     Post,
     Patch,
     Delete,
-    Param
+    Param,
+    UseGuards
  } from '@nestjs/common';
+import { JwtGuard } from 'src/auth/jwt.gaurd';
 import { ItemsService } from './items.service';
 
 
@@ -27,6 +29,7 @@ import { ItemsService } from './items.service';
       return itemsData
     }
 
+    @UseGuards(JwtGuard)
     @Post('add')
     AddItems(
       @Body('name') name:string,
@@ -35,12 +38,17 @@ import { ItemsService } from './items.service';
       @Body('brand') brand:string,
       @Body('outOfStock') outOfStock:boolean,
       @Body('sizes') sizes: string[],
-      @Body('category') category: string
+      @Body('category') category: string,
+      @Body('img') img: string,
+      @Body('price') quantity:number,
+
+
     ){
-      const itemsData = this.itemsservice.addItems(name, description, price, brand, outOfStock, sizes, category);
+      const itemsData = this.itemsservice.addItems(name, description, price, brand, outOfStock, sizes, category, img,quantity);
       return itemsData;
    }
 
+   @UseGuards(JwtGuard)
    @Patch(':id')
     UpdateItems(
       @Param('id') id:string,
@@ -50,17 +58,28 @@ import { ItemsService } from './items.service';
       @Body('brand') brand:string,
       @Body('outOfStock') outOfStock:boolean,
       @Body('sizes') sizes: string[],
-      @Body('category') category: string
+      @Body('category') category: string,
+      @Body('img') img: string,
+      @Body('price') quantity:number,
+
+
     ){
-      const itemsData = this.itemsservice.updateItems(id,name, description, price, brand, outOfStock, sizes, category);
+      const itemsData = this.itemsservice.updateItems(id,name, description, price, brand, outOfStock, sizes, category, img,quantity);
       return itemsData;
    }
 
-
+   @UseGuards(JwtGuard)
    @Delete(':id')
     DeleteItem(@Param('id') id:string){
       const itemsData = this.itemsservice.deleteItems(id);
       return itemsData
     }
 
+    @Post('cart')
+    ItemsFromCart(cart:string[]){
+      cart.map(i=>{
+        let cartData = this.itemsservice.cartToQty(i)
+      })
+      return 'CartHandled';
+    }
  }

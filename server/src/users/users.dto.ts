@@ -14,7 +14,11 @@ export const UsersSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    cart:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ItemsModel'
+    }]
     
     
 }, {timestamps: true});
@@ -28,5 +32,6 @@ UsersSchema.pre('save', async function(){
 export interface UsersI{
     fullname: string,
     username:string,
-    password: string
+    password: string,
+    cart?: string[]
 }
