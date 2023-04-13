@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import Card from '../../components/card';
+import Nav from '../../components/nav';
 
 function HomePage() {
     let backB:string = "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNob2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=2400&q=3000"
@@ -8,7 +9,8 @@ function HomePage() {
 
     return (
     <div>
-
+        <Nav />
+        
         <div className='header-section mb-20' style = {{
             backgroundImage: `url(${backB})`
           }}>

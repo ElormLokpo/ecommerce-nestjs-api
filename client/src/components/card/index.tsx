@@ -38,13 +38,17 @@ function Card(props:PropsI) {
                 <p>It is a long established fact that a reader will be distracted by the ...</p>
             </div>
 
-            <div>
+            <div className='flex justify-between items-center'>
                 <div className="rating rating-sm">
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                </div>
+
+                <div>
+                    <button className='text-xs py-3 px-6 text-white rounded-full bg-black'>Add to Cart</button>    
                 </div>
             </div>
         </div>
