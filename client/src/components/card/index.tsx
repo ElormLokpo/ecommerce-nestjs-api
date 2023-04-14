@@ -31,7 +31,7 @@ function Card(props:PropsI) {
 
             <div className='text-xs mb-3 gap-1 flex'>
                 <div className="badge badge-outline text-xs">Men</div>
-                <div className="badge badge-outline text-xs">Sneakers</div>
+                <div className="badge badge-outline text-xs">Sneakerss</div>
             </div>
             
             <div className='card-text text-sm mb-2'>
