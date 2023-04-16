@@ -25,7 +25,7 @@ function Card(props:PropsI) {
         </div>
         <div className=' h-2/6 py-2'>
             <div className='flex justify-between text-sm mb-1'>
-                <p className='font-semibold'>JORDAN SOMETHING S</p>
+                <p className='font-semibold'>JORDAN SOMETHING Ss</p>
                 <p className='font-bold '>GHC 500</p>
             </div>
 
