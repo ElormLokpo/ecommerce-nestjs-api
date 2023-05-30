@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    MongooseModule.forRoot('mongodb+srv://benedict:benedict@cluster0.gstdo9d.mongodb.net/ecommercenest'),
     AuthModule,
     ItemsModule,
     UsersModule
